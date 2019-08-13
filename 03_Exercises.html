@@ -429,39 +429,15 @@ However, we accept the null hypothesis for newspaper advertising as the p-value 
    additional 189 units will be sold.
 3. Finally, if the newspaper budget was increased by $1000 while keeping the TV and radio budgets unchanged,
    product sales will decrease by 1 unit.</code></pre></li>
-<li><p>Carefully explain the differences between the KNN classifier and KNN regression methods.</p></li>
+<li><p>Carefully explain the differences between the KNN classifier and KNN regression methods.</p>
+<hr />
+<p>KNN classification identifies the class that a given object belongs to. The object is assigned the class most common among its K Nearest Neighbors. The result is qualitative in nature.</p>
+<p><span class="math inline">\(\mathop {max}\limits_j \Pr (Y = j|X = {x_0}) = \frac{1}{K}\sum\limits_{i \in {N_0}} {I({y_i} = j)}\)</span></p>
+<p>KNN Classifier statistically analyzes classes of neighborhood points and picks up the class with largest proportion where the probability of certain class to test data is maximized among all factors.</p>
+<p>KNN Regression results in a quantitative output. This output value is the average of the output values of K Nearest Neighbors.</p>
+<p><span class="math inline">\(\hat f({x_0}) = \frac{1}{K}\sum\limits_{i \in {N_0}} {{y_i}}\)</span></p>
+<p>KNN Regression calculates the average of responses of neighborhood points and treats that average as the expectation of regression model.</p></li>
 </ol>
-<table>
-<colgroup>
-<col width="33%"></col>
-<col width="33%"></col>
-<col width="33%"></col>
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Explanation</th>
-<th align="center">KNN Classifier</th>
-<th align="center">KNN Regression</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Math</td>
-<td align="center"><span class="math inline">\(\mathop {max}\limits_j \Pr (Y = j|X = {X_0}) = \frac{1}{K}\sum\limits_{i \in {N_0}} {I({y_i} = j)}\)</span></td>
-<td align="center"><span class="math inline">\(\hat f({x_0}) = \frac{1}{K}\sum\limits_{i \in {N_0}} {{y_i}}\)</span></td>
-</tr>
-<tr class="even">
-<td align="center">Math Explanation</td>
-<td align="center">By using indicator function, KNN Classifier statistically analyzes classes of neighborhood points and picks up the class with largest proportion where the probability of certain class to test data is maximized among all factors.</td>
-<td align="center">KNN Regression calculates the average of responses of neighborhood points and treats that average as the expectation of regression model.</td>
-</tr>
-<tr class="odd">
-<td align="center">Usage</td>
-<td align="center">Qualitative (categorical) data</td>
-<td align="center">Quantitative data</td>
-</tr>
-</tbody>
-</table>
 </div>
 
 

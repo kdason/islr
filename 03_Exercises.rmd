@@ -36,8 +36,17 @@ output: html_document
     
 2. Carefully explain the differences between the KNN classifier and KNN regression methods.
 
-| Explanation | KNN Classifier | KNN Regression |
-|:-:|:-:|:-:|
-| Math  | $\mathop {max}\limits_j \Pr (Y = j|X = {X_0}) = \frac{1}{K}\sum\limits_{i \in {N_0}} {I({y_i} = j)}$ | $\hat f({x_0}) = \frac{1}{K}\sum\limits_{i \in {N_0}} {{y_i}}$ |
-| Math Explanation | By using indicator function, KNN Classifier statistically analyzes classes of neighborhood points and picks up the class with largest proportion where the probability of certain class to test data is maximized among all factors. | KNN Regression calculates the average of responses of neighborhood points and treats that average as the expectation of regression model. |
-| Usage | Qualitative (categorical) data | Quantitative data |
+    
+    
+    KNN classification identifies the class that a given object belongs to.  The object is assigned the class most common among its K Nearest Neighbors.  The result is qualitative in nature.
+    
+    $\mathop {max}\limits_j \Pr (Y = j|X = {x_0}) = \frac{1}{K}\sum\limits_{i \in {N_0}} {I({y_i} = j)}$ 
+    
+    KNN Classifier statistically analyzes classes of neighborhood points and picks up the class with largest proportion where the probability of certain class to test data is maximized among all factors.
+    
+    KNN Regression results in a quantitative output.  This output value is the average of the output values of K Nearest Neighbors.
+    
+    $\hat f({x_0}) = \frac{1}{K}\sum\limits_{i \in {N_0}} {{y_i}}$
+    
+    KNN Regression calculates the average of responses of neighborhood points and treats that average as the expectation of regression model.
+    
