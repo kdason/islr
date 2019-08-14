@@ -36,17 +36,54 @@ output: html_document
     
 2. Carefully explain the differences between the KNN classifier and KNN regression methods.
 
+
+    ```
+    KNN uses a non-parametric way to predict the value of the output for a given observation.  It uses the 
+    nearest K neighbors to the target to determine the result.  While the KNN classifier provides a 
+    qualitative ouput, KNN regression delivers a quantitative response.
     
+    In the case of the KNN classifier, the output is the class to which a majority of the K Nearest Neighbors 
+    to the target belong.
     
-    KNN classification identifies the class that a given object belongs to.  The object is assigned the class most common among its K Nearest Neighbors.  The result is qualitative in nature.
+    In the case of the KNN regression method, the result is the average of the output linked to the K Nearest 
+    Neighbors of the target.
     
-    $\mathop {max}\limits_j \Pr (Y = j|X = {x_0}) = \frac{1}{K}\sum\limits_{i \in {N_0}} {I({y_i} = j)}$ 
+    ```
     
-    KNN Classifier statistically analyzes classes of neighborhood points and picks up the class with largest proportion where the probability of certain class to test data is maximized among all factors.
+3. Suppose we have a data set with five predictors, $x_1$ = GPA, $x_2$ = IQ, $x_3$ = Gender (1 for Female and 0 for Male), $x_4$ = Interaction between GPA and IQ, and $x_5$ = Interaction between GPA and Gender. The response is starting salary after graduation (in thousands of dollars). Suppose we use least squares to fit the model, and get $\hat\beta_0$ = 50, $\hat\beta_1$ = 20, $\hat\beta_2$ = 0.07, $\hat\beta_3$ = 35, $\hat\beta_4$ = 0.01, $\hat\beta_5$ = −10.
+
+    (a) Which answer is correct, and why?
     
-    KNN Regression results in a quantitative output.  This output value is the average of the output values of K Nearest Neighbors.
+        i. For a fixed value of IQ and GPA, males earn more on average than females.
+        ii. For a fixed value of IQ and GPA, females earn more on average than males.
+        iii. For a fixed value of IQ and GPA, males earn more on average than females provided that the GPA is high enough.
+        iv. For a fixed value of IQ and GPA, females earn more on average than males provided that the GPA is high enough.
+        
+            ```
+            Salary = 50 + 20 * GPA + 0.07 * IQ + 35 * 1 + 0.01 * GPA:IQ - 10 * GPA * 1 (for Females)
+                   = 85 + 10 * GPA + 0.07 * IQ + 0.01 * GPA:IQ
+                   
+            Salary = 50 + 20 * GPA + 0.07 * IQ + 35 * 0 + 0.01 * GPA:IQ - 10 * GPA * 0 (for Males)
+                   = 50 + 20 * GPA + 0.07 * IQ + 0.01 * GPA:IQ
+                   
+            iii. Based on the formulas shown above, for a fixed value of IQ and GPA, males earn more on 
+                 average than females provided that the GPA is high enough.
+
+            ```
+
+    (b) Predict the salary of a female with IQ of 110 and a GPA of 4.0.
     
-    $\hat f({x_0}) = \frac{1}{K}\sum\limits_{i \in {N_0}} {{y_i}}$
+        ```
+        Salary = 85 + 10 * 4 + 0.07 * 110 + 0.01 * 4.0 * 110
+               = 137.1 (or $137,100)
+               
+        ```
     
-    KNN Regression calculates the average of responses of neighborhood points and treats that average as the expectation of regression model.
+    (c) True or false: Since the coefficient for the GPA/IQ interaction term is very small, there is very little evidence of an interaction effect. Justify your answer.
     
+        ```
+        False. The p-value of the regression coefficient needs to be examined to determine if the interaction
+        term is statstically significant or not.
+        
+        ```
+        

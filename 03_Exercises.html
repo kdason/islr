@@ -430,13 +430,43 @@ However, we accept the null hypothesis for newspaper advertising as the p-value 
 3. Finally, if the newspaper budget was increased by $1000 while keeping the TV and radio budgets unchanged,
    product sales will decrease by 1 unit.</code></pre></li>
 <li><p>Carefully explain the differences between the KNN classifier and KNN regression methods.</p>
-<hr />
-<p>KNN classification identifies the class that a given object belongs to. The object is assigned the class most common among its K Nearest Neighbors. The result is qualitative in nature.</p>
-<p><span class="math inline">\(\mathop {max}\limits_j \Pr (Y = j|X = {x_0}) = \frac{1}{K}\sum\limits_{i \in {N_0}} {I({y_i} = j)}\)</span></p>
-<p>KNN Classifier statistically analyzes classes of neighborhood points and picks up the class with largest proportion where the probability of certain class to test data is maximized among all factors.</p>
-<p>KNN Regression results in a quantitative output. This output value is the average of the output values of K Nearest Neighbors.</p>
-<p><span class="math inline">\(\hat f({x_0}) = \frac{1}{K}\sum\limits_{i \in {N_0}} {{y_i}}\)</span></p>
-<p>KNN Regression calculates the average of responses of neighborhood points and treats that average as the expectation of regression model.</p></li>
+<pre><code>KNN uses a non-parametric way to predict the value of the output for a given observation.  It uses the 
+nearest K neighbors to the target to determine the result.  While the KNN classifier provides a 
+qualitative ouput, KNN regression delivers a quantitative response.
+
+In the case of the KNN classifier, the output is the class to which a majority of the K Nearest Neighbors 
+to the target belong.
+
+In the case of the KNN regression method, the result is the average of the output linked to the K Nearest 
+Neighbors of the target.
+</code></pre></li>
+<li><p>Suppose we have a data set with five predictors, <span class="math inline">\(x_1\)</span> = GPA, <span class="math inline">\(x_2\)</span> = IQ, <span class="math inline">\(x_3\)</span> = Gender (1 for Female and 0 for Male), <span class="math inline">\(x_4\)</span> = Interaction between GPA and IQ, and <span class="math inline">\(x_5\)</span> = Interaction between GPA and Gender. The response is starting salary after graduation (in thousands of dollars). Suppose we use least squares to fit the model, and get <span class="math inline">\(\hat\beta_0\)</span> = 50, <span class="math inline">\(\hat\beta_1\)</span> = 20, <span class="math inline">\(\hat\beta_2\)</span> = 0.07, <span class="math inline">\(\hat\beta_3\)</span> = 35, <span class="math inline">\(\hat\beta_4\)</span> = 0.01, <span class="math inline">\(\hat\beta_5\)</span> = −10.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Which answer is correct, and why?</p>
+<ol style="list-style-type: lower-roman">
+<li>For a fixed value of IQ and GPA, males earn more on average than females.</li>
+<li>For a fixed value of IQ and GPA, females earn more on average than males.</li>
+<li>For a fixed value of IQ and GPA, males earn more on average than females provided that the GPA is high enough.</li>
+<li>For a fixed value of IQ and GPA, females earn more on average than males provided that the GPA is high enough.</li>
+</ol>
+<pre><code>Salary = 50 + 20 * GPA + 0.07 * IQ + 35 * 1 + 0.01 * GPA:IQ - 10 * GPA * 1 (for Females)
+       = 85 + 10 * GPA + 0.07 * IQ + 0.01 * GPA:IQ
+
+Salary = 50 + 20 * GPA + 0.07 * IQ + 35 * 0 + 0.01 * GPA:IQ - 10 * GPA * 0 (for Males)
+       = 50 + 20 * GPA + 0.07 * IQ + 0.01 * GPA:IQ
+
+iii. Based on the formulas shown above, for a fixed value of IQ and GPA, males earn more on 
+     average than females provided that the GPA is high enough.
+</code></pre></li>
+<li><p>Predict the salary of a female with IQ of 110 and a GPA of 4.0.</p>
+<pre><code>Salary = 85 + 10 * 4 + 0.07 * 110 + 0.01 * 4.0 * 110
+       = 137.1 (or $137,100)
+</code></pre></li>
+<li><p>True or false: Since the coefficient for the GPA/IQ interaction term is very small, there is very little evidence of an interaction effect. Justify your answer.</p>
+<pre><code>False. The p-value of the regression coefficient needs to be examined to determine if the interaction
+term is statstically significant or not.
+</code></pre></li>
+</ol></li>
 </ol>
 </div>
 
