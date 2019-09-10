@@ -370,7 +370,7 @@ summary {
 <div id="conceptual" class="section level1">
 <h1>Conceptual</h1>
 <ol style="list-style-type: decimal">
-<li><p>Describe the null hypotheses to which the p-values given in Table 3.4 correspond. Explain what conclusions you can draw based on these p-values. Your explanation should be phrased in terms of sales, TV, radio, and newspaper, rather than in terms of the coefficients of the linear model.</p>
+<li><p>Describe the null hypotheses to which the p-values given in <strong>Table 3.4</strong> correspond. Explain what conclusions you can draw based on these p-values. Your explanation should be phrased in terms of sales, TV, radio, and newspaper, rather than in terms of the coefficients of the linear model.</p>
 <table>
 <thead>
 <tr class="header">
@@ -429,10 +429,13 @@ However, we accept the null hypothesis for newspaper advertising as the p-value 
    additional 189 units will be sold.
 3. Finally, if the newspaper budget was increased by $1000 while keeping the TV and radio budgets unchanged,
    product sales will decrease by 1 unit.</code></pre></li>
-<li><p>Carefully explain the differences between the KNN classifier and KNN regression methods.</p>
-<pre><code>KNN uses a non-parametric way to predict the value of the output for a given observation.  It uses the 
+</ol>
+<hr />
+<ol start="2" style="list-style-type: decimal">
+<li><p>Carefully explain the differences between the <strong>KNN classifier</strong> and <strong>KNN regression</strong> methods.</p>
+<pre><code>KNN uses a non-parametric way to predict the output for a given observation.  It uses the 
 nearest K neighbors to the target to determine the result.  While the KNN classifier provides a 
-qualitative ouput, KNN regression delivers a quantitative response.
+qualitative output, KNN regression delivers a quantitative response.
 
 In the case of the KNN classifier, the output is the class to which a majority of the K Nearest Neighbors 
 to the target belong.
@@ -440,6 +443,9 @@ to the target belong.
 In the case of the KNN regression method, the result is the average of the output linked to the K Nearest 
 Neighbors of the target.
 </code></pre></li>
+</ol>
+<hr />
+<ol start="3" style="list-style-type: decimal">
 <li><p>Suppose we have a data set with five predictors, <span class="math inline">\(x_1\)</span> = GPA, <span class="math inline">\(x_2\)</span> = IQ, <span class="math inline">\(x_3\)</span> = Gender (1 for Female and 0 for Male), <span class="math inline">\(x_4\)</span> = Interaction between GPA and IQ, and <span class="math inline">\(x_5\)</span> = Interaction between GPA and Gender. The response is starting salary after graduation (in thousands of dollars). Suppose we use least squares to fit the model, and get <span class="math inline">\(\hat\beta_0\)</span> = 50, <span class="math inline">\(\hat\beta_1\)</span> = 20, <span class="math inline">\(\hat\beta_2\)</span> = 0.07, <span class="math inline">\(\hat\beta_3\)</span> = 35, <span class="math inline">\(\hat\beta_4\)</span> = 0.01, <span class="math inline">\(\hat\beta_5\)</span> = −10.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Which answer is correct, and why?</p>
@@ -447,8 +453,7 @@ Neighbors of the target.
 <li>For a fixed value of IQ and GPA, males earn more on average than females.</li>
 <li>For a fixed value of IQ and GPA, females earn more on average than males.</li>
 <li>For a fixed value of IQ and GPA, males earn more on average than females provided that the GPA is high enough.</li>
-<li>For a fixed value of IQ and GPA, females earn more on average than males provided that the GPA is high enough.</li>
-</ol>
+<li><p>For a fixed value of IQ and GPA, females earn more on average than males provided that the GPA is high enough.</p>
 <pre><code>Salary = 50 + 20 * GPA + 0.07 * IQ + 35 * 1 + 0.01 * GPA:IQ - 10 * GPA * 1 (for Females)
        = 85 + 10 * GPA + 0.07 * IQ + 0.01 * GPA:IQ
 
@@ -458,6 +463,7 @@ Salary = 50 + 20 * GPA + 0.07 * IQ + 35 * 0 + 0.01 * GPA:IQ - 10 * GPA * 0 (for 
 iii. Based on the formulas shown above, for a fixed value of IQ and GPA, males earn more on 
      average than females provided that the GPA is high enough.
 </code></pre></li>
+</ol></li>
 <li><p>Predict the salary of a female with IQ of 110 and a GPA of 4.0.</p>
 <pre><code>Salary = 85 + 10 * 4 + 0.07 * 110 + 0.01 * 4.0 * 110
        = 137.1 (or $137,100)
@@ -468,6 +474,82 @@ term is statstically significant or not.
 </code></pre></li>
 </ol></li>
 </ol>
+<hr />
+<ol start="4" style="list-style-type: decimal">
+<li><p>I collect a set of data (n = 100 observations) containing a single predictor and a quantitative response. I then fit a linear regression model to the data, as well as a separate cubic regression, i.e. <span class="math inline">\(Y = β_0 + β_1X + β_2X^2 + β_3X^3 + \varepsilon\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Suppose that the true relationship between X and Y is linear, i.e. <span class="math inline">\(Y = β_0 + β_1X + \varepsilon\)</span>. Consider the training residual sum of squares (RSS) for the linear regression, and also the training RSS for the cubic regression. Would we expect one to be lower than the other, would we expect them to be the same, or is there not enough information to tell? Justify your answer.</p>
+<pre><code>Polynomial regression models are much more flexible compared to linear regression. Hence, the cubic 
+regression model is likely to accommodate for the irreducible error present in the training data.
+This should make it a tigther fit when compared to the linear regression model. Based on that, the  
+training RSS for the cubic model is expected to be lower than that of the linear model.</code></pre></li>
+<li><p>Answer (a) using test rather than training RSS.</p>
+<pre><code>The test RSS for the linear model is expected to be lower.</code></pre></li>
+<li><p>Suppose that the true relationship between X and Y is not linear, but we don’t know how far it is from linear. Consider the training RSS for the linear regression, and also the training RSS for the cubic regression. Would we expect one to be lower than the other, would we expect them to be the same, or is there not enough information to tell? Justify your answer.</p>
+<pre><code>Polynomial regression models are much more flexible compared to linear regression. Hence, the cubic 
+regression model is likely to accommodate for the irreducible error present in the training data.
+This should make it a tigther fit when compared to the linear regression model. Based on that, the  
+training RSS for the cubic model is expected to be lower than that of the linear model.</code></pre></li>
+<li><p>Answer (c) using test rather than training RSS.</p>
+<pre><code>Not knowing if the true relationship is closer to being linear or cubic in nature, there is not
+enough information to determine if the test RSS of one model is lower than the other.</code></pre></li>
+</ol></li>
+</ol>
+<hr />
+<ol start="5" style="list-style-type: decimal">
+<li><p>Consider the fitted values that result from performing linear regression without an intercept. In this setting, the <span class="math inline">\(i^{th}\)</span> fitted value takes the form</p>
+<p><span class="math inline">\(\hat y_i = x_i\hat β\)</span>, where <span class="math inline">\(\hat \beta = \frac {\sum_{i=1}^n x_iy_i} {\sum_{i&#39;=1}^n x_{i&#39;}^2}\)</span>. Show that we can write <span class="math inline">\(\hat y_i = \sum_{i&#39;=1}^n a_{i&#39;}y_{i&#39;}\)</span>. What is <span class="math inline">\(a_{i&#39;}\)</span>?</p>
+<p><em>Note: We interpret this result by saying that the fitted values from linear regression are linear combinations of the response values.</em></p>
+<p><strong>Answer</strong>:</p>
+<p><span class="math inline">\(\hat y_i = x_i\hat β  = x_i \frac {\sum_{j=1}^n x_jy_j} {\sum_{i&#39;=1}^n x_{i&#39;}^2}  = \frac {\sum_{j=1}^n x_ix_jy_j} {\sum_{i&#39;=1}^n x_{i&#39;}^2}  = \sum_{j=1}^n (\frac {x_ix_jy_j} {\sum_{i&#39;=1}^n x_{i&#39;}^2})  = \sum_{j=1}^n \frac {x_ix_j} {\sum_{i&#39;=1}^n x_{i&#39;}^2} y_j\)</span></p>
+<p>If <span class="math inline">\(a_j = \frac {x_i x_j} {\sum_{i&#39;=1}^n x_{i&#39;}^2}\)</span>, then we have <span class="math inline">\(\hat y_i = \sum_{j=1}^n a_j y_j\)</span></p>
+<p>In other words, <span class="math inline">\(\hat y_i = \sum_{i&#39;=1}^n a_{i&#39;} y_{i&#39;}\)</span></p></li>
+</ol>
+<hr />
+<ol start="6" style="list-style-type: decimal">
+<li><p>Using <strong>(3.4)</strong>, argue that in the case of simple linear regression, the least squares line always passes through the point <span class="math inline">\((\bar x, \bar y)\)</span>.</p>
+<p><strong>Answer:</strong></p>
+<p>We have <span class="math inline">\(\hat y = \hat \beta_0 + \hat \beta_1 \hat x\)</span></p>
+<p>where <span class="math inline">\(\hat \beta_1 = \frac {\sum_{i=1}^n (x_i - \bar x)(y_i - \bar y)} {\sum_{i=1}^n (x_i - \bar x)^2}\)</span> and <span class="math inline">\(\hat \beta_0 = \bar y - \hat \beta_1 \bar x\)</span>.</p>
+<p>Substituting for <span class="math inline">\(\hat \beta_0\)</span>, we have</p>
+<p><span class="math inline">\(\hat y = \bar y - \hat \beta_1 \bar x + \hat \beta_1 \hat x\)</span></p>
+<p>If <span class="math inline">\(\hat x = \bar x\)</span>, then</p>
+<p><span class="math inline">\(\hat y = \bar y - \hat \beta_1 \bar x + \hat \beta_1 \bar x = \bar y\)</span></p>
+<p>Hence, the least squares line always passes through the point <span class="math inline">\((\bar x, \bar y)\)</span></p></li>
+</ol>
+<hr />
+<ol start="7" style="list-style-type: decimal">
+<li><p>It is claimed in the text that in the case of simple linear regression of Y onto X, the <span class="math inline">\(R^2\)</span> statistic <strong>(3.17)</strong> is equal to the square of the correlation between X and Y <strong>(3.18)</strong>. Prove that this is the case. For simplicity, you may assume that <span class="math inline">\(\bar x = \bar y = 0\)</span>.</p>
+<p><strong>Answer</strong>:</p>
+<p><strong>Objective</strong>: Prove that in the case of simple linear regression <span class="math inline">\(y = \beta_0 + \beta_1 x + \varepsilon\)</span>, <span class="math inline">\(R^2\)</span> is equal to the square of correlation between x and y. In other words, <span class="math inline">\(R^2 = [corr(x, y)]^2\)</span></p>
+<p>We know the following…</p>
+<p><span class="math inline">\(R^2 = 1 - \frac{RSS}{TSS}\)</span> where <span class="math inline">\(RSS = \sum (y_i - \hat{y}_i)^2\)</span> and <span class="math inline">\(TSS = \sum (y_i - \bar{y})^2\)</span></p>
+<p>Also, <span class="math inline">\(corr(x, y) = \frac{\sum (x_i - \bar{x}) (y_i - \bar{y})} {\sigma_x \sigma_y}\)</span> where <span class="math inline">\(\sigma_x = \sqrt{\sum (x_i - \bar{x})^2}\)</span> and <span class="math inline">\(\sigma_y = \sqrt{\sum (y_i - \bar{y})^2}\)</span></p>
+<p><strong>Proof</strong>:</p>
+<p><span class="math inline">\(R^2 = 1 - \frac{RSS}{TSS}\)</span> <span class="math inline">\(= \frac{TSS - RSS}{TSS}\)</span> <span class="math inline">\(= \frac {\sum (y_i - \bar{y})^2 - \sum (y_i - \hat{y}_i)^2} {\sum (y_i - \bar{y})^2}\)</span></p>
+<p>Focusing on just the numerator:</p>
+<p>Numerator = <span class="math inline">\(\sum (y_i - \bar{y})^2 - \sum (y_i - \hat{y}_i)^2\)</span> <span class="math inline">\(= \sum [(y_i - \bar{y})^2 - (y_i - \hat{y}_i)^2]\)</span> <span class="math inline">\(= \sum [ (y_i - \bar{y}) - (y_i - \hat{y}_i) ] [ (y_i - \bar{y}) + (y_i - \hat{y}_i)]\)</span></p>
+<p><span class="math inline">\(\implies\)</span> Numerator = <span class="math inline">\(\sum ( \hat{y}_i - \bar{y} ) ( 2y_i - \bar{y} - \hat{y}_i )\)</span></p>
+<p>We know that: <span class="math inline">\(\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}\)</span> and <span class="math inline">\(\hat{\beta}_1 = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})} {\sum (x_j - \bar{x})^2}\)</span></p>
+<p>Substituting the expression for <span class="math inline">\(\hat{\beta}_0\)</span> into <span class="math inline">\(\hat{y}_i\)</span>, we have:</p>
+<p><span class="math inline">\(\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i\)</span> <span class="math inline">\(= \bar{y} - \hat{\beta}_1 \bar{x} + \hat{\beta}_1 x_i\)</span> <span class="math inline">\(= \bar{y} + \hat{\beta}_1 (x_i - \bar{x})\)</span></p>
+<p>In other words, <span class="math inline">\(\hat{y}_i - \bar{y} = \hat{\beta}_1 (x_i - \bar{x})\)</span></p>
+<p>This accounts for the first term in the numerator. Now, looking at the second term there, we have:</p>
+<p><span class="math inline">\(( 2y_i - \bar{y} - \hat{y}_i ) = 2y_i - \bar{y} - \bar{y} - \hat{\beta}_1 (x_i - \bar{x})\)</span> <span class="math inline">\(= 2(y_i - \bar{y}) - \hat{\beta}_1 (x_i - \bar{x})\)</span></p>
+<p>We now have the Numerator as follows:</p>
+<p>Numerator = <span class="math inline">\(\sum [\hat{\beta}_1 (x_i - \bar{x})] [2(y_i - \bar{y}) - \hat{\beta}_1 (x_i - \bar{x})]\)</span></p>
+<p><span class="math inline">\(\implies\)</span> Numerator = <span class="math inline">\(\hat{\beta}_1 \sum (x_i - \bar{x}) [2(y_i - \bar{y}) - \hat{\beta}_1 (x_i - \bar{x})]\)</span></p>
+<p><span class="math inline">\(\implies\)</span> Numerator = <span class="math inline">\(\hat{\beta}_1 \sum [2(x_i - \bar{x})(y_i - \bar{y}) - \hat{\beta}_1 (x_i - \bar{x})^2]\)</span></p>
+<p><span class="math inline">\(\implies\)</span> Numerator = <span class="math inline">\(\hat{\beta}_1 [ 2 \sum (x_i - \bar{x})(y_i - \bar{y}) - \hat{\beta}_1 \sum (x_i - \bar{x})^2]\)</span></p>
+<p>Substituting the value for <span class="math inline">\(\hat{\beta}_1\)</span> in the last term, we get:</p>
+<p>Numerator = <span class="math inline">\(\hat{\beta}_1 [ 2 \sum (x_i - \bar{x})(y_i - \bar{y}) - \sum (x_i - \bar{x})(y_i - \bar{y})]\)</span></p>
+<p><span class="math inline">\(\implies\)</span> Numerator = <span class="math inline">\(\hat{\beta}_1 [ \sum (x_i - \bar{x})(y_i - \bar{y}) ]\)</span></p>
+<p>Substituting for <span class="math inline">\(\hat{\beta}_1\)</span> again, we have:</p>
+<p>Numerator = <span class="math inline">\(\frac {[ \sum (x_i - \bar{x})(y_i - \bar{y}) ]^2}{\sum (x_i - \bar{x})^2}\)</span></p>
+<p>So, we end up with</p>
+<p><span class="math inline">\(R^2 = \frac {[ \sum (x_i - \bar{x})(y_i - \bar{y}) ]^2}{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}\)</span> <span class="math inline">\(= [\frac {[ \sum (x_i - \bar{x})(y_i - \bar{y}) ]}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}}]^2\)</span> <span class="math inline">\(= [corr(x, y)]^2\)</span></p></li>
+</ol>
+<hr />
 </div>
 
 
